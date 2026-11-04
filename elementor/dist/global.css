@@ -1,0 +1,175 @@
+/* The Auto Door Experts: paste into Appearance > Customize > Additional CSS.
+   Everything is scoped to ade-* classes set on the imported templates. */
+:root { --ade-red:#D7191F; --ade-ink:#14171C; --ade-line:#E3E0D9; --ade-paper:#F6F4EF; --ade-muted:#5A626D; }
+
+/* Theme resets */
+.ade-txt p { margin: 0 0 .4em; }
+.ade-txt p:last-child { margin-bottom: 0; }
+.ade-txt a, .ade-h a { color: inherit; text-decoration: none; }
+.ade-h .elementor-heading-title, .ade-txt { overflow-wrap: break-word; }
+.ade-narrow { max-width: 660px; }
+.ade-crumbs a:hover, .ade-footlinks a:hover { color: var(--ade-red); }
+.ade-footlinks a { color: inherit; text-decoration: none; }
+.ade-footlinks p { margin-bottom: 10px; }
+.ade-footlogo img { filter: brightness(0) invert(1); opacity: .95; }
+.ade-breakword { overflow-wrap: anywhere; }
+.ade-btn .elementor-button { transition: background-color .2s, border-color .2s, transform .2s; }
+.ade-btn .elementor-button:hover { transform: translateY(-1px); }
+.ade-stepn .elementor-heading-title { display: inline-block; padding: 6px 10px; border-radius: 8px; background: #FCEDEC; }
+.ade-stepn { width: auto !important; }
+
+/* Card links */
+a.e-con { color: inherit; text-decoration: none; }
+.ade-lift { transition: transform .22s cubic-bezier(.2,.7,.2,1), box-shadow .22s, border-color .22s; }
+.ade-lift:hover { transform: translateY(-3px); box-shadow: 0 2px 6px rgba(20,23,28,.08), 0 24px 60px rgba(20,23,28,.14); }
+.ade-badge { width: auto !important; flex: none; }
+.ade-badge .elementor-icon { display: inline-flex; }
+.ade-intent__t { flex: 1; min-width: 0; }
+.ade-callblock { color: #fff; }
+.ade-callblock:hover { background-color: #B01217 !important; }
+
+/* Hero sliding-door reveal */
+.ade-heromedia { position: relative; padding-bottom: 28px; }
+.ade-door { position: relative; overflow: hidden; border: 10px solid var(--ade-ink); border-top-width: 26px; box-shadow: 0 24px 60px rgba(20,23,28,.18); }
+.ade-door img { display: block; }
+.ade-panes { position: absolute !important; inset: 0; z-index: 2; pointer-events: none; margin: 0 !important; }
+.ade-panes .elementor-widget-container { height: 100%; }
+.ade-pane { position: absolute; top: 0; bottom: 0; width: 50%; border: 3px solid #2f343b; background: linear-gradient(115deg, rgba(255,255,255,.55), rgba(220,226,232,.35) 40%, rgba(255,255,255,.5)); -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); animation: 1.4s cubic-bezier(.65,0,.25,1) .35s both; }
+.ade-pane--l { left: 0; animation-name: ade-open-l; }
+.ade-pane--r { right: 0; animation-name: ade-open-r; }
+@keyframes ade-open-l { to { transform: translateX(-96%); } }
+@keyframes ade-open-r { to { transform: translateX(96%); } }
+.ade-float { position: absolute !important; left: -8px; bottom: 0; z-index: 4; width: auto !important; }
+@media (min-width: 1100px) { .ade-float { left: -36px; } }
+
+/* Proof strip: 1px hairlines between cells */
+.ade-proof { background: var(--ade-line); border: 1px solid var(--ade-line); border-radius: 14px; overflow: hidden; }
+
+/* Industry tabs */
+.ade-tabs .e-n-tabs-heading { gap: 8px; }
+.ade-tabs .e-n-tab-title { justify-content: flex-start; min-height: 48px; padding: 14px 16px; border: 1px solid var(--ade-line); border-radius: 12px; background: #fff !important; color: var(--ade-ink) !important; font-family: Inter, sans-serif; font-size: 15px; font-weight: 500; text-align: left; }
+.ade-tabs .e-n-tab-title:hover { border-color: var(--ade-ink); }
+.ade-tabs .e-n-tab-title[aria-selected="true"] { background: var(--ade-ink) !important; border-color: var(--ade-ink); color: #fff !important; }
+.ade-tabs .e-n-tab-title[aria-selected="true"] .e-n-tab-icon { color: #FF6A6E; fill: #FF6A6E; }
+.ade-tabs .e-n-tab-icon svg { width: 16px; height: 16px; fill: currentColor; }
+.ade-tabs .e-n-tabs { gap: 48px; }
+.ade-tabs .e-n-tabs-content > .e-con { padding: 0; }
+.ade-panel { overflow: hidden; }
+.ade-panel > .e-con:first-child .elementor-widget-image img { border-radius: 0; }
+@media (max-width: 1024px) {
+  .ade-tabs .e-n-tabs { gap: 20px; }
+  .ade-tabs .e-n-tabs-heading { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; margin: 0 -20px; padding: 2px 20px 8px; justify-content: flex-start; }
+  .ade-tabs .e-n-tabs-heading::-webkit-scrollbar { display: none; }
+  .ade-tabs .e-n-tab-title { flex: none; border-radius: 999px; padding: 10px 16px; white-space: nowrap; }
+}
+.ade-more .elementor-button { padding: 8px 0 !important; border: 0 !important; color: var(--ade-red) !important; background: none !important; }
+.ade-more { margin-top: 18px; }
+
+/* FAQ */
+.ade-faq .e-n-accordion-item { border-bottom: 1px solid var(--ade-line); }
+.ade-faq .e-n-accordion { border-top: 1px solid var(--ade-line); }
+.ade-faq .e-n-accordion-item-title { padding: 26px 0; border: 0 !important; background: none !important; font-family: Archivo, sans-serif; font-size: 17px; font-weight: 700; color: var(--ade-ink); }
+.ade-faq .e-n-accordion-item-title-text { font: inherit; color: inherit; }
+.ade-faq .e-n-accordion-item-title-icon svg { width: 14px; height: 14px; fill: var(--ade-ink); }
+.ade-faq .e-n-accordion-item > .e-con { padding: 0; border: 0 !important; }
+
+/* Chips on the industries page */
+.ade-chip { width: auto !important; }
+.ade-chip .elementor-button { padding: 11px 16px; border-width: 1px !important; background: #fff; font-size: 14.5px; font-weight: 500; }
+.ade-irow + .ade-irow { border-top: 1px solid var(--ade-line); }
+.ade-irow { scroll-margin-top: 120px; }
+
+/* Door-type drawings */
+.ade-art { display: block; width: 100%; height: 150px; padding: 14px; border-radius: 14px; background: var(--ade-paper); }
+
+/* Header */
+.ade-wrap { max-width: 1240px; margin-inline: auto; }
+.ade-header { box-shadow: 0 1px 0 var(--ade-line); }
+.ade-toptxt strong { color: #fff; font-weight: 600; }
+.ade-dot { display: inline-block; width: 8px; height: 8px; margin-right: 8px; border-radius: 50%; background: #2BD27A; }
+.ade-topcall a { white-space: nowrap; }
+.ade-logo { width: auto !important; flex: none; }
+.ade-navwrap { min-width: 0; }
+@media (max-width: 1024px) { .ade-hide-t { display: none !important; } }
+@media (max-width: 767px) { .ade-hide-m { display: none !important; } }
+
+/* Mobile action bar (markup lives in the footer template) */
+.ade-actionbar { position: fixed; z-index: 50; left: 0; right: 0; bottom: 0; display: none; grid-template-columns: 1fr 1.25fr; gap: 8px; padding: 10px 12px calc(10px + env(safe-area-inset-bottom)); background: rgba(255,255,255,.96); border-top: 1px solid var(--ade-line); }
+.ade-actionbar a { display: flex; align-items: center; justify-content: center; min-height: 50px; border-radius: 999px; color: #fff !important; font: 600 15.5px Inter, sans-serif; text-decoration: none; }
+.ade-actionbar a:first-child { background: var(--ade-ink); }
+.ade-actionbar a:last-child { background: var(--ade-red); }
+@media (max-width: 899px) { .ade-actionbar { display: grid; } body { padding-bottom: 72px; } }
+
+/* Quote form (Contact Form 7) */
+.ade-form { display: grid; gap: 20px; color: #2B3038; font: 400 16px/1.5 Inter, sans-serif; }
+.ade-form p { margin: 0; }
+.ade-form br { display: none; }
+.ade-form__legend { margin: 0 0 12px; font: 700 18px/1.3 Archivo, sans-serif; color: var(--ade-ink); }
+.ade-form__row { display: grid; gap: 20px; }
+@media (min-width: 560px) { .ade-form__row { grid-template-columns: 1fr 1fr; } }
+.ade-form label { display: block; font-weight: 600; font-size: 14.5px; color: var(--ade-ink); }
+.ade-form .opt { color: var(--ade-muted); font-weight: 400; }
+.ade-form input[type=text], .ade-form input[type=tel], .ade-form input[type=email], .ade-form textarea { display: block; width: 100%; min-height: 50px; margin-top: 6px; padding: 12px 14px; border: 1.5px solid var(--ade-line); border-radius: 10px; background: #fff; font: 400 16px Inter, sans-serif; color: inherit; }
+.ade-form textarea { height: 96px; resize: vertical; }
+.ade-form input:focus, .ade-form textarea:focus { outline: none; border-color: var(--ade-ink); box-shadow: 0 0 0 3px rgba(20,23,28,.1); }
+.ade-form .wpcf7-radio { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.ade-form .wpcf7-list-item { margin: 0; }
+.ade-form .wpcf7-list-item label { position: relative; display: block; cursor: pointer; }
+.ade-form .wpcf7-list-item input { position: absolute; inset: 0; opacity: 0; cursor: pointer; }
+.ade-form .wpcf7-list-item-label { display: flex; align-items: center; min-height: 52px; padding: 10px 14px; border: 1.5px solid var(--ade-line); border-radius: 12px; font-weight: 500; font-size: 14.5px; line-height: 1.2; }
+.ade-form .wpcf7-list-item-label::before, .ade-form .wpcf7-list-item-label::after { content: none; }
+.ade-form .wpcf7-list-item input:checked + .wpcf7-list-item-label { border-color: var(--ade-ink); background: var(--ade-paper); box-shadow: inset 0 0 0 1px var(--ade-ink); }
+.ade-form .wpcf7-list-item input:focus-visible + .wpcf7-list-item-label { outline: 3px solid var(--ade-red); outline-offset: 2px; }
+.ade-form .wpcf7-list-item:first-child input:checked + .wpcf7-list-item-label { border-color: var(--ade-red); background: #FCEDEC; box-shadow: inset 0 0 0 1px var(--ade-red); }
+.ade-alert { padding: 14px 16px; border-radius: 12px; background: #FCEDEC; font-size: 14.5px; }
+.ade-alert a { color: var(--ade-red); font-weight: 700; white-space: nowrap; }
+.ade-upload { padding: 14px 16px; border: 1.5px dashed #C9C4BA; border-radius: 12px; }
+.ade-upload input { display: block; margin-top: 8px; max-width: 100%; font-size: 14px; font-weight: 400; }
+.ade-form input[type=submit] { width: 100%; min-height: 56px; border: 0; border-radius: 999px; background: var(--ade-red); color: #fff; font: 600 17px Inter, sans-serif; cursor: pointer; transition: background-color .2s; }
+.ade-form input[type=submit]:hover { background: #B01217; }
+.ade-form .wpcf7-not-valid-tip { margin-top: 6px; color: #B01217; font-size: 13.5px; font-weight: 500; }
+.ade-formcard .wpcf7-response-output { margin: 16px 0 0 !important; padding: 12px 14px !important; border-radius: 10px; font-size: 14.5px; }
+.ade-formcard .wpcf7-spinner { display: block; margin: 8px auto 0; }
+
+/* Blog cards (Royal Addons Post Grid) */
+.ade-postgrid .wpr-grid-item-inner, .ade-postgrid .wpr-grid-item-above-content, .ade-postgrid .wpr-grid-image-wrap img { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; }
+.ade-postgrid .wpr-grid-item-below-content { background: none !important; }
+.ade-postgrid .wpr-grid-media-wrap, .ade-postgrid .wpr-grid-image-wrap { border-radius: 14px; overflow: hidden; }
+.ade-postgrid .wpr-grid-item-below-content { padding: 16px 0 0 !important; }
+.ade-postgrid .wpr-grid-item-title a { font: 700 18px/1.3 Archivo, sans-serif !important; color: var(--ade-ink) !important; }
+.ade-postgrid .wpr-grid-item-title a:hover { color: var(--ade-red) !important; }
+.ade-postgrid .wpr-grid-item-date, .ade-postgrid .wpr-grid-item-date span { font: 400 13.5px Inter, sans-serif !important; color: var(--ade-muted) !important; }
+
+/* Single post */
+.ade-posthead .elementor-widget-container { max-width: 860px; }
+.ade-posttitle .wpr-post-title, .ade-posttitle h1 { margin: 0; font: 800 clamp(33px, 2vw + 24px, 52px)/1.08 Archivo, sans-serif; letter-spacing: -1px; color: var(--ade-ink); }
+.ade-fit { width: fit-content !important; }
+.ade-postmeta, .ade-postmeta a, .ade-postmeta span { color: var(--ade-muted) !important; font-size: 15px; }
+.ade-postmedia img { width: 100%; max-height: 560px; object-fit: cover; }
+.ade-prose { max-width: 68ch; color: #2B3038; font: 400 17.2px/1.8 Inter, sans-serif; }
+.ade-prose p { margin: 0 0 1.4em; }
+.ade-prose h2 { margin: 2.4em 0 .7em; font: 800 clamp(22px, 2vw, 28px)/1.25 Archivo, sans-serif; letter-spacing: -.015em; color: var(--ade-ink); scroll-margin-top: 110px; }
+.ade-prose h3 { margin: 2em 0 .6em; font: 700 20px/1.3 Archivo, sans-serif; color: var(--ade-ink); }
+.ade-prose h4 { margin: 1.8em 0 .5em; font: 700 17.5px/1.3 Archivo, sans-serif; color: var(--ade-ink); }
+.ade-prose ul, .ade-prose ol { margin: 0 0 1.5em; padding-left: 1.3em; }
+.ade-prose li { margin-bottom: .5em; }
+.ade-prose li::marker { color: var(--ade-red); }
+.ade-prose a { color: var(--ade-red); text-decoration: underline; text-underline-offset: 3px; }
+.ade-prose strong { color: var(--ade-ink); font-weight: 600; }
+.ade-prose table { width: 100%; border-collapse: collapse; font-size: 15px; line-height: 1.5; }
+.ade-prose th, .ade-prose td { padding: 12px 14px; border: 1px solid var(--ade-line); text-align: left; vertical-align: top; }
+.ade-prose th { background: var(--ade-paper); color: var(--ade-ink); font-weight: 600; }
+.ade-toc { padding: 24px; border: 1px solid var(--ade-line); border-radius: 14px; font-size: 14.5px; line-height: 1.4; }
+.ade-toc:empty { display: none; }
+.ade-toc p { margin: 0 0 10px; font-size: 12px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--ade-muted); }
+.ade-toc ol { margin: 0; padding: 0; list-style: none; max-height: 48vh; overflow: auto; }
+.ade-toc a { display: block; padding: 6px 0; color: #2B3038; text-decoration: none; }
+.ade-toc a:hover { color: var(--ade-red); }
+.ade-progress { position: fixed; z-index: 60; top: 0; left: 0; height: 3px; width: 100%; background: var(--ade-red); transform: scaleX(0); transform-origin: 0 50%; pointer-events: none; }
+@media (min-width: 1025px) { .ade-aside { position: sticky; top: 120px; } }
+@media (max-width: 1024px) { .ade-aside { display: none !important; } }
+
+@media (prefers-reduced-motion: reduce) {
+  .ade-pane { display: none; }
+  .ade-lift, .ade-btn .elementor-button { transition: none; }
+}

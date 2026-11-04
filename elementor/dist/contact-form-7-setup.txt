@@ -1,0 +1,32 @@
+CONTACT FORM 7 SETUP
+Contact > Add New. Title must be exactly:  Auto Door Quote
+
+===== FORM TAB: replace everything with this =====
+<div class="ade-form">
+<div><p class="ade-form__legend">What do you need?</p>[radio service use_label_element "Emergency repair|service@theautodoorexperts.com.au" "New door|sales@theautodoorexperts.com.au" "Maintenance|maintenance@theautodoorexperts.com.au" "Spare parts|spareparts@theautodoorexperts.com.au"]</div>
+<div class="ade-alert" hidden><strong>Door stuck right now?</strong> Calling is fastest. <a href="tel:1300829998">1300 829 998</a></div>
+<div class="ade-form__row"><label>Name [text* your-name autocomplete:name]</label><label>Phone [tel* your-phone autocomplete:tel]</label></div>
+<div class="ade-form__row"><label>Suburb or postcode [text* your-suburb autocomplete:address-level2]</label><label>Email <span class="opt">(optional)</span> [email your-email autocomplete:email]</label></div>
+<label>Anything we should know? <span class="opt">(optional)</span> [textarea your-message]</label>
+<label class="ade-upload">Add a photo of the door <span class="opt">(optional)</span> [file photo limit:8mb filetypes:jpg|jpeg|png|webp|heic]</label>
+[submit "Send request"]
+</div>
+
+===== MAIL TAB =====
+To:          [service]
+From:        The Auto Door Experts <wordpress@theautodoorexperts.com.au>
+Subject:     New [_raw_service] enquiry: [your-name], [your-suburb]
+Additional headers:
+Reply-To: [your-email]
+
+Message body:
+Service: [_raw_service]
+Name: [your-name]
+Phone: [your-phone]
+Suburb / postcode: [your-suburb]
+Email: [your-email]
+
+[your-message]
+
+File attachments:
+[photo]

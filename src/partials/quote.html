@@ -1,0 +1,79 @@
+<section class="quote" id="quote" aria-labelledby="quote-title">
+  <div class="wrap quote__grid">
+    <div class="quote__side">
+      <p class="eyebrow eyebrow--light">Free site inspection &amp; quote</p>
+      <h2 id="quote-title" class="h2">Tell us what's happening.</h2>
+      <p class="quote__lead">The right team gets your request straight away and calls you back.</p>
+
+      <a class="quote__phone" href="tel:1300829998">
+        <span class="quote__phone-ic"><svg class="ic"><use href="#i-phone"/></svg></span>
+        <span><small>Door stuck right now? Call 24/7</small><strong>1300 829 998</strong></span>
+      </a>
+
+      <ul class="quote__facts">
+        <li><svg class="ic"><use href="#i-clock"/></svg>Open 24 hours, 7 days</li>
+        <li><svg class="ic"><use href="#i-pin"/></svg>Prestons NSW · Australia-wide</li>
+      </ul>
+    </div>
+
+    <form class="form" novalidate data-form>
+      <fieldset class="form__need">
+        <legend class="form__legend">What do you need?</legend>
+        <div class="chips" role="radiogroup">
+          <label class="chip chip--alert"><input type="radio" name="service" value="emergency" required><span><svg class="ic"><use href="#i-siren"/></svg>Emergency repair</span></label>
+          <label class="chip"><input type="radio" name="service" value="install"><span><svg class="ic"><use href="#i-install"/></svg>New door</span></label>
+          <label class="chip"><input type="radio" name="service" value="maintenance"><span><svg class="ic"><use href="#i-calendar"/></svg>Maintenance</span></label>
+          <label class="chip"><input type="radio" name="service" value="parts"><span><svg class="ic"><use href="#i-cog"/></svg>Spare parts</span></label>
+        </div>
+        <p class="field__err" data-err="service">Pick the option closest to what you need.</p>
+      </fieldset>
+
+      <div class="alert" data-emergency hidden role="status">
+        <svg class="ic"><use href="#i-siren"/></svg>
+        <p><strong>Door stuck right now?</strong> Calling is fastest. <a href="tel:1300829998">1300 829 998</a></p>
+      </div>
+
+      <div class="form__row">
+        <div class="field">
+          <label for="f-name">Name</label>
+          <input id="f-name" name="name" type="text" autocomplete="name" required>
+          <p class="field__err">Please enter your name.</p>
+        </div>
+        <div class="field">
+          <label for="f-phone">Phone</label>
+          <input id="f-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" required pattern="\+?[0-9 ]{8,}">
+          <p class="field__err">Enter a number we can call back.</p>
+        </div>
+      </div>
+      <div class="form__row">
+        <div class="field">
+          <label for="f-suburb">Suburb or postcode</label>
+          <input id="f-suburb" name="suburb" type="text" autocomplete="address-level2" required>
+          <p class="field__err">We need this to send the nearest technician.</p>
+        </div>
+        <div class="field">
+          <label for="f-email">Email <span class="opt">(optional)</span></label>
+          <input id="f-email" name="email" type="email" autocomplete="email">
+          <p class="field__err">That email doesn't look right.</p>
+        </div>
+      </div>
+      <div class="field">
+        <label for="f-msg">Anything we should know? <span class="opt">(optional)</span></label>
+        <textarea id="f-msg" name="message" rows="3"></textarea>
+      </div>
+      <label class="upload">
+        <input type="file" name="photo" accept="image/*">
+        <svg class="ic"><use href="#i-upload"/></svg>
+        <span><strong>Add a photo of the door</strong> <small>Optional</small></span>
+      </label>
+
+      <button class="btn btn--red btn--lg btn--block" type="submit">Send request <svg class="ic"><use href="#i-arrow"/></svg></button>
+
+      <div class="form__done" data-done hidden tabindex="-1">
+        <span class="form__done-ic"><svg class="ic"><use href="#i-check"/></svg></span>
+        <h3>Thanks, we've got it.</h3>
+        <p>Expect a call back soon. Anything urgent? Ring <a href="tel:1300829998">1300 829 998</a>.</p>
+      </div>
+    </form>
+  </div>
+</section>

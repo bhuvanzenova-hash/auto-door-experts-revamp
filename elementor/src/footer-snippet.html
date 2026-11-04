@@ -1,0 +1,48 @@
+<div class="ade-actionbar"><a href="tel:1300829998">Call 24/7</a><a href="/contact-us/#quote">Get a free quote</a></div>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  // Quote form: preselect a service from ?service= or from the page, and nudge emergencies to call.
+  var pagePreset = { "emergency-breakdown-service": "Emergency repair", "sales-and-installation": "New door", "periodic-maintenance": "Maintenance", "spare-parts": "Spare parts" };
+  var slug = location.pathname.split("/").filter(Boolean).pop();
+  var wanted = new URLSearchParams(location.search).get("service") || pagePreset[slug];
+  document.querySelectorAll(".ade-form").forEach(function (form) {
+    var radios = form.querySelectorAll('input[name="service"]');
+    var alertBox = form.querySelector(".ade-alert");
+    var sync = function () {
+      var picked = form.querySelector('input[name="service"]:checked');
+      if (alertBox) alertBox.hidden = !(picked && radios[0] === picked);
+    };
+    radios.forEach(function (r) {
+      var text = r.parentElement.querySelector(".wpcf7-list-item-label").textContent.trim();
+      if (wanted && text === wanted) r.checked = true;
+      r.addEventListener("change", sync);
+    });
+    sync();
+  });
+
+  // Blog article: build "On this page" from the h2s and show a reading-progress bar.
+  var prose = document.querySelector(".ade-prose");
+  if (prose) {
+    var toc = document.querySelector(".ade-toc");
+    var heads = prose.querySelectorAll("h2");
+    if (toc && heads.length > 2) {
+      var list = document.createElement("ol");
+      heads.forEach(function (h, i) {
+        h.id = h.id || "section-" + (i + 1);
+        var li = document.createElement("li"), a = document.createElement("a");
+        a.href = "#" + h.id; a.textContent = h.textContent;
+        li.appendChild(a); list.appendChild(li);
+      });
+      toc.innerHTML = "<p>On this page</p>";
+      toc.appendChild(list);
+    }
+    var bar = document.createElement("div");
+    bar.className = "ade-progress";
+    document.body.appendChild(bar);
+    addEventListener("scroll", function () {
+      var r = prose.getBoundingClientRect();
+      bar.style.transform = "scaleX(" + Math.min(1, Math.max(0, -r.top / (r.height - innerHeight * 0.6))) + ")";
+    }, { passive: true });
+  }
+});
+</script>
